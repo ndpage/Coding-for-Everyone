@@ -1,4 +1,4 @@
 *.exe
 *.o
 .DS_Store
-a.out
+*.out
