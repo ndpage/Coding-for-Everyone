@@ -50,7 +50,7 @@ int main(void)
 	}
 	average = average/size; // compute average = sum of data/total number of points
 	printf("Average weight: %lf\n", average);
-	printf("                ----------\n");
+	printf("                ------------\n");
 	//close file handle
 	printf("Closing file %s\n",filename);
 	fclose(file_ptr);
