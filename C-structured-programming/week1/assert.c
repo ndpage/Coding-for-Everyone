@@ -25,11 +25,11 @@ int main()
   printf("Enter two floats: ");
   scanf("%f %f", &x, &y);
   printf("\n");
-  
+
   // check condition
   assert(x >= y);
 
-  printf("%0.2f is great than %0.2f\n", x, y);
+  printf("%0.2f is greater than %0.2f\n", x, y);
   printf("Program ran successfully!\n");
 
   return 0;
