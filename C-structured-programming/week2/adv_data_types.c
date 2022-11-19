@@ -11,8 +11,6 @@
  */
 
 #include <stdio.h>
-#define MAX_LEN 100
-#define EMPTY -1
 /*
 * strcture data type
 */
@@ -25,31 +23,10 @@ typedef struct  {
   char* suit;
 } card;
 
-// stack data type
-typedef struct {
-  char s[MAX_LEN]; // declare array of characters as the 'stack'
-  int top; // top variable is used to keep track of items in stack
-} stack;
-// Stack reset function
-void reset (stack* stk){
-  stk->top=EMPTY;
-}
-// push function
-void push(stack* stk, char c_inp){
-  stk->top++;
-  stk->s[stk->top] = c_inp;
-};
-// pop function 
-char pop(stack* stk){
-  return stk->s[stk->top--];
-}
-
-struct {
-
-} s1;
 
 int main()
 {
+
     card deck[52];
     card* dk_ptr = &deck[0]; 
 
