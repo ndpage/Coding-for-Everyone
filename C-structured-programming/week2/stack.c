@@ -43,5 +43,3 @@ int is_empty(const stack* stk){
 int is_full(const stack* stk){
   return stk->top == FULL;
 }
-
-extern stack stk;
