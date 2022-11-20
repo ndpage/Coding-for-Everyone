@@ -10,23 +10,16 @@
  * 
  */
 
-#include <stdio.h>
-/*
-* strcture data type
-*/
-
-// Delcare a struct array 'deck' of type 'card'
-
-
-typedef struct  {
-  int num;
-  char* suit;
-} card;
-
+#include "adt.h"
+#include "stack.h"
 
 int main()
 {
-
+    // Stack declaration
+    stack stk1;
+    push(&stk1, 'N');
+    
+    
     card deck[52];
     card* dk_ptr = &deck[0]; 
 
