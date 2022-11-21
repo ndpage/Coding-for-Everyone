@@ -15,8 +15,15 @@
 
 int main()
 {
+   /**
+    * @brief Reverse a string using a stack
+    * 
+    */
+    char* sting = "Hello world";
     // Stack declaration
-    stack stk1;
+    stack stk1;   
+    reset(&stk1); // reset stack
+
     push(&stk1, 'N');
     
     
