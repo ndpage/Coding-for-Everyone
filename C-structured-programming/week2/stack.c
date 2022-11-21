@@ -25,7 +25,7 @@ void reset (stack* stk){
 void push(stack* stk, char c_inp){
   stk->top++;
   stk->s[stk->top] = c_inp;
-};
+}
 // pop function 
 char pop(stack* stk){
   return stk->s[stk->top--];
