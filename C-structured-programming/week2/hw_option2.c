@@ -13,6 +13,8 @@
 #include "hw_option2.h"
 
 int main(void){
+  unsigned int snum = genSocialSecurityNum();
+  printf("Social Security Number: %d", snum);
   return 0;
 }
 
@@ -33,5 +35,13 @@ int deptSalaryGen(dept department){
 }
 
 unsigned int genSocialSecurityNum(){
-  return 0;
+  char* num_str = "";
+  unsigned int rand_num;
+  int i = 0;
+
+  for(i=0; i<10; i++){
+    rand_num = rand() % 10;
+    num_str += (char)rand_num;
+  }
+  return (int)num_str;
 }
