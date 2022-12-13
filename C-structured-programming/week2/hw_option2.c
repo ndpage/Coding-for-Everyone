@@ -12,7 +12,8 @@
 
 #include "hw_option2.h"
 
-int main(void){
+int main(int argc, char** argv){
+  printf("%d\n", randNum(num));
   return 0;
 }
 
@@ -21,7 +22,7 @@ employee randEmployee(){
   // declare new employee struct
   employee em;
   
-  dept rand_dept = (dept)3;
+  dept rand_dept = (dept)(randNum(3));
   em.annual_salary = deptSalaryGen(rand_dept);
   em.department = rand_dept;
   em.social_security_number = genSocialSecurityNum();
@@ -34,4 +35,8 @@ int deptSalaryGen(dept department){
 
 unsigned int genSocialSecurityNum(){
   return 0;
+}
+
+int randNum(int max){
+  return rand() % max;
 }

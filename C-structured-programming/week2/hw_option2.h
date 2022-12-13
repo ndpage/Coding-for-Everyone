@@ -28,3 +28,4 @@ typedef struct {
 employee randEmployee();
 int deptSalaryGen(dept department);
 unsigned int genSocialSecurityNum();
+int randNum(int max);
