@@ -23,7 +23,7 @@ employee randEmployee(){
   // declare new employee struct
   employee em;
   
-  dept rand_dept = (dept)3;
+  dept rand_dept = (dept)(randNum(3));
   em.annual_salary = deptSalaryGen(rand_dept);
   em.department = rand_dept;
   em.social_security_number = genSocialSecurityNum();
@@ -44,4 +44,8 @@ unsigned int genSocialSecurityNum(){
     num_str += (char)rand_num;
   }
   return (int)num_str;
+}
+
+int randNum(int max){
+  return rand() % max;
 }

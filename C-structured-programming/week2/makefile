@@ -4,11 +4,23 @@ CC = gcc
 CC_FLAGS = -std=c11
 BUILD = ./bin
 SRC = .
-OBJDIR = $(BUILD)
+OBJDIR = $(BUILD)/obj
 IDIR = .
-APP = adt.out
+APP = hw.out
 
-# Main executable target
+# Week 2 Homework
+hw: $(OBJDIR)/hw.o
+	@echo --- building executable ---
+	$(CC) $(CC_FLAGS) $(OBJDIR)/hw.o -o $(BUILD)/$(APP)
+	@echo --- $(APP) built ---
+	@echo ===== Success! =====
+
+$(OBJDIR)/hw.o: $(SRC)/hw_option2.c
+	@echo ---- building stack object ----
+	$(CC) -c $(SRC)/hw_option2.c -o $(OBJDIR)/hw.o
+	@echo ------------ DONE -------------
+
+# Advanced Data Types executable target
 adt: $(SRC)/adt.c $(OBJDIR)/stack.o
 	@echo --- building executable ---
 	$(CC) $(CC_FLAGS) $(SRC)/adt.c -o $(BUILD)/$(APP)  $(OBJDIR)/stack.o
