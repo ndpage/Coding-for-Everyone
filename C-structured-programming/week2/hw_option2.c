@@ -14,16 +14,28 @@
 
 int main(void){
   // declare new employees and generate random data
-  employee Jeff = randEmployee();
-  employee Sarah = randEmployee();
+  employee Rafael = randEmployee();
+  employee Sumaiyyah = randEmployee();
+  employee Karla = randEmployee();
+  employee Kenny = randEmployee();
+  employee Daniel  = randEmployee();
+  employee Akshat = randEmployee();
+  employee Frank  = randEmployee();
+  employee Zifan = randEmployee();
+  employee Shaoyang = randEmployee();
+  employee Mike = randEmployee();
   
-  printf("Jeff's salary:                  %d\n", Jeff.annual_salary);
-  printf("Jeff's department:              %d\n", Jeff.department);
-  printf("Jeff's social security number:  %u\n", Jeff.social_security_number);
+  printf("Rafael's salary:                  %d\n", Rafael.annual_salary);
+  printf("Rafael's department:              %s\n", printDept(&Rafael));
+  printf("Rafael's social security number:  %u\n", Rafael.social_security_number);
   printf("\n\n");
-  printf("Sarah's salary:                  %d\n", Sarah.annual_salary);
-  printf("Sarah's department:              %d\n", Sarah.department);
-  printf("Sarah's social security number:  %u\n", Sarah.social_security_number);
+  printf("Sumaiyyah's salary:                  %d\n", Sumaiyyah.annual_salary);
+  printf("Sumaiyyah's department:              %s\n", printDept(&Sumaiyyah));
+  printf("Sumaiyyah's social security number:  %u\n", Sumaiyyah.social_security_number);
+  printf("\n\n");
+  printf("Karla's salary:                  %d\n", Karla.annual_salary);
+  printf("Karla's department:              %s\n", printDept(&Karla));
+  printf("Karla's social security number:  %u\n", Karla.social_security_number);
 
   return 0;
 }
@@ -90,4 +102,33 @@ int randNum(int max){
   time_t t1;
   srand(time(&t1) + rand());
   return rand() % max + 1;
+}
+
+char* printDept(employee* em){
+  switch(em->department){
+    case HR: {
+      return ("HR");
+      break;
+    }
+    case Sales:{
+      return ("Sales");
+      break;
+    } 
+    case Research: {
+      return ("Research");
+      break;
+    }
+    case Software: {
+     return ("Software");
+      break;
+    }
+    case Executive:{
+      return ("Executive");
+      break;
+    }
+    default: {
+     return ("N/A");
+      break;
+    }
+  }
 }
