@@ -13,8 +13,18 @@
 #include "hw_option2.h"
 
 int main(void){
-  unsigned int snum = genSocialSecurityNum();
-  printf("Social Security Number: %d", snum);
+  // declare new employees and generate random data
+  employee Jeff = randEmployee();
+  employee Sarah = randEmployee();
+  
+  printf("Jeff's salary:                  %d\n", Jeff.annual_salary);
+  printf("Jeff's department:              %d\n", Jeff.department);
+  printf("Jeff's social security number:  %u\n", Jeff.social_security_number);
+  printf("\n\n");
+  printf("Sarah's salary:                  %d\n", Sarah.annual_salary);
+  printf("Sarah's department:              %d\n", Sarah.department);
+  printf("Sarah's social security number:  %u\n", Sarah.social_security_number);
+
   return 0;
 }
 
@@ -31,7 +41,36 @@ employee randEmployee(){
 }
 
 int deptSalaryGen(dept department){
-  return 0;
+  int base;
+  int variable = randNum(15000);
+  switch(department){
+    case HR: {
+      base = 70000;
+      break;
+    }
+    case Sales:{
+      base = 80000;
+      break;
+    } 
+    case Research: {
+      base = 120000;
+      break;
+    }
+    case Software: {
+      base = 90000;
+      break;
+    }
+    case Executive:{
+      base = 200000;
+      break;
+    }
+    default: {
+      base = 75000;
+      break;
+    }
+  }
+  
+  return base + variable;
 }
 
 unsigned int genSocialSecurityNum(){
@@ -40,12 +79,15 @@ unsigned int genSocialSecurityNum(){
   int i = 0;
 
   for(i=0; i<10; i++){
-    rand_num = rand() % 10;
+    rand_num = randNum(9);
+
     num_str += (char)rand_num;
   }
-  return (int)num_str;
+  return (unsigned int)num_str;
 }
 
 int randNum(int max){
-  return rand() % max;
+  time_t t1;
+  srand(time(&t1) + rand());
+  return rand() % max + 1;
 }

@@ -21,7 +21,20 @@
 			"utility": "c",
 			"vector": "c",
 			"algorithm": "c",
-			"cstdlib": "c"
+			"cstdlib": "c",
+			"hw_option2.h": "c",
+			"__config": "c",
+			"__locale": "c",
+			"chrono": "c",
+			"ctime": "c",
+			"locale": "c",
+			"*.tcc": "c",
+			"limits": "c",
+			"numeric": "c",
+			"ratio": "c",
+			"streambuf": "c",
+			"tuple": "c",
+			"type_traits": "c"
 		}
 	}
 }
