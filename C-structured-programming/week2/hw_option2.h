@@ -37,3 +37,6 @@ unsigned int genSocialSecurityNum();
 int randNum(int max);
 char* printDept(employee* em);
 void printEmployee(employee em, char* name);
+
+/* ============= END OF HEADER FILE ============= */
+
