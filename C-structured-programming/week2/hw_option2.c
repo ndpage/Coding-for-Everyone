@@ -31,6 +31,12 @@ int main(void)
   return 0;
 }
 
+/**
+ * @brief Function to print employee information
+ * 
+ * @param em 
+ * @param name 
+ */
 void printEmployee(employee em, char* name){
   printf("%s's salary:                 %d\n", name, em.annual_salary);
   printf("%s's department:             %s\n", name, printDept(&em));
