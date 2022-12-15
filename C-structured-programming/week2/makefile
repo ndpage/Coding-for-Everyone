@@ -45,3 +45,6 @@ runadt:
 
 debug: 
 	gdb $(BUILD)/$(APP)
+
+hw.txt: hw_option2.h hw_option2.c
+	cat hw_option2.h hw_option2.c > hw.txt
