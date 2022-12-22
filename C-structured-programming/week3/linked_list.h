@@ -8,15 +8,15 @@
  * @copyright Copyright (c) 2022
  * 
  */
-
+#include <stdio.h> 
 #include <stdlib.h>
 
 /**
  * @brief Integer list node
  * 
  */
-typedef struct {
+typedef struct list{
   int data;
-  list* next;
+  struct list* next;
 } list;
 
