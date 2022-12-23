@@ -11,25 +11,19 @@
 
 #include "linked_list.h"
 
+/**
+ * @brief Create new head
+ * 
+ * @param data 
+ * @return list* 
+ */
 list* create(int data){
   list* head = malloc(sizeof(list));
   head->data = data;
   head->next = NULL;
-  
   return head;
 }
 
 int is_empty(const list* l){
   return (l==NULL);
-}
-
-
-int main(){
-  list int_list;
-  list* head = create(1);
-  int_list.data = head->data;
-  int_list.next = head->next; 
-  printf("Is list empty? %d\n",is_empty(&int_list));
-  
-  return 0;
 }
