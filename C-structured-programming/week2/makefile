@@ -48,3 +48,6 @@ debug:
 
 hw.txt: hw_option2.h hw_option2.c
 	cat hw_option2.h hw_option2.c > hw.txt
+
+honors: week2_honors.c
+	$(CC) $^ -o $(BUILD)/$@.out
