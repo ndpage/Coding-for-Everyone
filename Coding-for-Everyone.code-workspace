@@ -36,7 +36,8 @@
 			"tuple": "c",
 			"type_traits": "c",
 			"memory": "c",
-			"week2_honors.h": "c"
+			"week2_honors.h": "c",
+			"stdio.h": "c"
 		}
 	}
 }
