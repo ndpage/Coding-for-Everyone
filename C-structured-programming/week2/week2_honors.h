@@ -22,6 +22,12 @@ This is a Monte Carlo method to get an approximation to these probabilities.
 Use at least 1 million randomly generated hands.
 
 */
+#ifndef WEEK2_HONORS_H
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+#include <time.h>
 
 /**
  * @brief Enumeruation for card suit
@@ -39,6 +45,13 @@ typedef enum {
  * 
  */
 typedef struct {
-  short pip;
+  short pips;
   suit_t suit;
 } card_t;
+
+
+typedef card_t* deck;
+
+void shuffle(uint16_t deck_size, deck* deck);
+
+#endif
