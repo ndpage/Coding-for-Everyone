@@ -1,6 +1,6 @@
 
 # Compiler flags
-CC = gcc
+CC = clang
 CC_FLAGS = -std=c11
 BUILD = ./bin
 SRC = .
@@ -49,5 +49,8 @@ debug:
 hw.txt: hw_option2.h hw_option2.c
 	cat hw_option2.h hw_option2.c > hw.txt
 
-honors: week2_honors.c
+$(OBJDIR)/week2_honors.o: week2_honors.c
+	$(CC) -c $^ -o $@
+
+honors: $(OBJDIR)/week2_honors.o
 	$(CC) $^ -o $(BUILD)/$@.out
