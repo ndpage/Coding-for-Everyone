@@ -1,6 +1,6 @@
 
 # Compiler flags
-CC = clang
+CC = gcc
 CC_FLAGS = -std=c11
 BUILD = ./bin
 SRC = .
