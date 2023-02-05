@@ -1,3 +1,5 @@
+#ifndef LINKED_LIST_H
+#define HEADER_FILE_H
 /**
  * @file linked_list.h
  * @author Nathan Page
@@ -20,3 +22,6 @@ typedef struct list{
   struct list* next;
 } list;
 
+list* create(int data);
+int is_empty(const list* l);
+#endif
