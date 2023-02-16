@@ -3,20 +3,20 @@
 CC = gcc
 CFLAGS = -std=c99
 
-BUILD = ./bin
+BUILD = build
 SRC = 
-OBJDIR = $(BUILD)/obj
+OBJDIR = $(BUILD)
 IDIR = 
 APP = $(BUILD)/hw.out
-vpath %.c $(SRC)
-vpath %.h $(SRC)
-vpath %.o $(OBJDIR)
-vpath %.out $(BUILD)
 
 # Convert source files (.c) to object files (.o)
 SRCS = hw.c linked_list.c
 OBJS = $(patsubst %.c,%.o,$(SRCS))
 
+vpath %.c $(SRC)
+vpath %.h $(SRC)
+vpath %.out $(BUILD)
+vpath %.o $(OBJDIR)
 
 # $(OBJDIR)/hw.o: $(SRC)/hw_option2.c
 # 	@echo ---- building stack object ----
@@ -25,32 +25,25 @@ OBJS = $(patsubst %.c,%.o,$(SRCS))
 
 # Target for compiling .c files to object files
 %.o: %.c
-	mkdir -p $(OBJDIR)
 	$(CC) $(CFLAGS) -c $< -o $(OBJDIR)/$@
 
 # Homework
-hw: $(OBJS)
-	@echo 
-	@echo Linking objects and building hw.out
-	@echo Objects: $(OBJS)
-	@echo 
-	$(CC) $(CFLAGS) $^ -o $(APP)
+hw: $(OBJDIR)/hw.o
+	$(CC) -o $(APP) $^
 	@echo Created $(APP)
-	@echo 
-	$(APP)
 
 clean:
 	rm -r $(BUILD)/*
 
 init:
-	mkdir $(BUILD)
-	mkdir $(OBJDIR)	
+	mkdir -p $(BUILD)
+	mkdir -p $(OBJDIR)	
 
 runadt:
 	$(BUILD)/$(APP)
 
 debug: 
-	gdb $(BUILD)/$(APP)
+	gdb $(APP)
 
 hw.txt: hw_option2.h hw_option2.c
 	cat hw_option2.h hw_option2.c > hw.txt
