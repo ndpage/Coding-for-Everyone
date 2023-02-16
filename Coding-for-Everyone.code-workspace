@@ -37,7 +37,8 @@
 			"type_traits": "c",
 			"memory": "c",
 			"week2_honors.h": "c",
-			"stdio.h": "c"
+			"stdio.h": "c",
+			"linked_list.h": "c"
 		}
 	}
 }
