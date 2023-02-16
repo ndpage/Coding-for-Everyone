@@ -1,17 +1,17 @@
-#include "linked_list.h"
-#include <stdio.h>
+#include "hw.h"
 /**
  * @brief Main entry point for program
  * 
  * @return int 
  */
 
-int main(){
-  list int_list;
-  list* head = create(1);
-  int_list.data = head->data;
-  int_list.next = head->next; 
-  printf("Is list empty? %d\n",is_empty(&int_list));
+int main(void){
+  element hydrogen;
+
+  hydrogen.name = "Hydrogen";
+  hydrogen.symbol = 'H';
+  hydrogen.weight = 1.008;
   
+  printf("Name: %s\n", hydrogen.name);
   return 0;
 }
