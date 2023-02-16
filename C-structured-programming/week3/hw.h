@@ -13,7 +13,15 @@
 // Struct to represent an atomic element
 typedef struct {
   char* name;
-  char symbol;
+  char* symbol;
   double weight;
 } element;
 
+// 
+typedef struct elem_list{
+  element data;
+  struct elem_list* next;
+} elem_list;
+
+elem_list* create(element data);
+void insert(elem_list** head, elem_list data);

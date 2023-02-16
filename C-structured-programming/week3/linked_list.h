@@ -23,5 +23,9 @@ typedef struct int_list{
 
 int_list* create(int data);
 int is_empty(const int_list* l);
+void count(const int_list* l);
+void concat(const int_list* l1,const int_list* l2);
+void insert(int d);
+void delete(const int_list* l);
 
 #endif
