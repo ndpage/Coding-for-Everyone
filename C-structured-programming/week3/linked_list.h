@@ -10,18 +10,18 @@
  * @copyright Copyright (c) 2022
  * 
  */
-#include <stdio.h> 
 #include <stdlib.h>
 
 /**
  * @brief Integer list node
  * 
  */
-typedef struct list{
+typedef struct int_list{
   int data;
-  struct list* next;
-} list;
+  struct int_list* next;
+} int_list;
 
-list* create(int data);
-int is_empty(const list* l);
+int_list* create(int data);
+int is_empty(const int_list* l);
+
 #endif
