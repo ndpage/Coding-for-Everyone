@@ -12,18 +12,18 @@
 #include "linked_list.h"
 
 /**
- * @brief Create new head
+ * @brief Create new head pointer
  * 
  * @param data 
  * @return list* 
  */
-list* create(int data){
-  list* head = malloc(sizeof(list));
+int_list* create(int data){
+  int_list* head = malloc(sizeof(int_list));
   head->data = data;
   head->next = NULL;
   return head;
 }
 
-int is_empty(const list* l){
+int is_empty(const int_list* l){
   return (l==NULL);
 }

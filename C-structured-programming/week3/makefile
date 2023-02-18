@@ -1,46 +1,49 @@
 
 # Compiler flags
 CC = gcc
-CFLAGS = -std=c11
+CFLAGS = -std=c99
 
-BUILD = ./bin
+BUILD = build
 SRC = 
-OBJDIR = $(BUILD)/obj
+OBJDIR = $(BUILD)
 IDIR = 
-APP = hw.out
-vpath %.c $(SRC)
-vpath %.h $(SRC)
-vpath %.o $(OBJDIR)
+APP = $(BUILD)/hw.out
 
 # Convert source files (.c) to object files (.o)
 SRCS = hw.c linked_list.c
 OBJS = $(patsubst %.c,%.o,$(SRCS))
 
-# Target for compiling .c files to object files
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $(OBJDIR)/$@
+vpath %.c $(SRC)
+vpath %.h $(SRC)
+vpath %.out $(BUILD)
+vpath %.o $(OBJDIR)
 
 # $(OBJDIR)/hw.o: $(SRC)/hw_option2.c
 # 	@echo ---- building stack object ----
 # 	$(CC) -c $(SRC)/hw_option2.c -o $(OBJDIR)/hw.o
 # 	@echo ------------ DONE -------------
 
+# Target for compiling .c files to object files
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $(OBJDIR)/$@
+
 # Homework
-hw: $(OBJS)
-	$(CC) $(OBJDIR)/$^ -o $@ 
+hw: $(OBJDIR)/hw.o
+	$(CC) -o $(APP) $^
+	@echo Created $(APP)
 
 clean:
-	rm $(BUILD)/*
+	rm -r $(BUILD)/*
 
 init:
-	mkdir $(BUILD)
-	mkdir $(OBJDIR)	
+	mkdir -p $(BUILD)
+	mkdir -p $(OBJDIR)	
 
 runadt:
 	$(BUILD)/$(APP)
 
 debug: 
-	gdb $(BUILD)/$(APP)
+	gdb $(APP)
 
 hw.txt: hw_option2.h hw_option2.c
 	cat hw_option2.h hw_option2.c > hw.txt

@@ -1,3 +1,5 @@
+#ifndef LINKED_LIST_H
+#define HEADER_FILE_H
 /**
  * @file linked_list.h
  * @author Nathan Page
@@ -8,15 +10,22 @@
  * @copyright Copyright (c) 2022
  * 
  */
-#include <stdio.h> 
 #include <stdlib.h>
 
 /**
  * @brief Integer list node
  * 
  */
-typedef struct list{
+typedef struct int_list{
   int data;
-  struct list* next;
-} list;
+  struct int_list* next;
+} int_list;
 
+int_list* create(int data);
+int is_empty(const int_list* l);
+void count(const int_list* l);
+void concat(const int_list* l1,const int_list* l2);
+void insert(int d);
+void delete(const int_list* l);
+
+#endif
