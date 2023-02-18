@@ -6,7 +6,7 @@ int main(void){
   const uint16_t deck_size = 52;     // standard deck size
   deck deck1 = malloc(sizeof(card_t)*52);
 
-  shuffle(deck_size, deck1);
+  shuffle(deck_size, &deck1);
 
   printf("Deck %d", deck1->pips);
   
