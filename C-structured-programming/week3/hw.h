@@ -27,9 +27,9 @@ typedef struct elem_list{
 /**
  * @brief Create list of atomic elements
  * 
- * @return elem_list* 
+ * @param head 
  */
-elem_list* create();
+void create(elem_list* head);
 /**
  * @brief Insert new atomic element_s into the list
  * 

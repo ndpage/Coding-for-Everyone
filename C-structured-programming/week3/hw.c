@@ -9,13 +9,19 @@ int main(void){
   // Declare head variable to store list address
   elem_list* head;
   
-  head = create();   // Create a new linked list and update head variable
+  create(head);   // Create a new linked list and update head variable
   
   // declare elements
   element_s hydrogen = {"Hydrogen", "H", 1.008};
   element_s helium = {"Helium","He", 4.003};
   element_s lithium = {"Lithium","Li", 6.941};
   element_s beryllium = {"Beryllium","Be", 9.012};
+  element_s boron = {"Boron","B", 10.811};
+  element_s carbon = {"Carbon","C", 12.011};
+  element_s nitrogen = {"Nitrogen","N", 14.007};
+  element_s oxygen = {"Oxygen","O", 15.999};
+  element_s fluorine = {"Fluorine","F", 18.998};
+  element_s neon = {"Neon","Ne", 20.180};
   
   insert(&head, hydrogen, 0);
   insert(&head, helium, 1);
@@ -27,8 +33,9 @@ int main(void){
   return 0;
 }
 
-elem_list* create(){
-  return (elem_list*)malloc(sizeof(elem_list));
+void create(elem_list* head){
+   head = (elem_list*)malloc(sizeof(elem_list)); // assign allocated memory location to head variable
+   head->next = NULL;
 }
 
 void insert(elem_list** head, element_s data, int index){
