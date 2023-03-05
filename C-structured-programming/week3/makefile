@@ -11,7 +11,7 @@ APP = $(BUILD)/hw.out
 
 # Convert source files (.c) to object files (.o)
 SRCS = hw.c linked_list.c
-OBJS = $(patsubst %.c,%.o,$(SRCS))
+OBJS = $(addprefix $(OBJDIR)/, $(patsubst %.c,%.o,$(SRCS)))
 
 vpath %.c $(SRC)
 vpath %.h $(SRC)
@@ -23,14 +23,18 @@ vpath %.o $(OBJDIR)
 # 	$(CC) -c $(SRC)/hw_option2.c -o $(OBJDIR)/hw.o
 # 	@echo ------------ DONE -------------
 
-# Target for compiling .c files to object files
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $(OBJDIR)/$@
 
 # Homework
 hw: $(OBJDIR)/hw.o
+	@echo BUILDING
+	@echo $(OBJS)
 	$(CC) -o $(APP) $^
 	@echo Created $(APP)
+
+# Target for compiling .c files to object files
+$(OBJDIR)/%.o: %.c
+	@echo COMPILING
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -r $(BUILD)/*
