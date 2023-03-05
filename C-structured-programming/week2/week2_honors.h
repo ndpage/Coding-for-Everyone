@@ -28,7 +28,7 @@ Use at least 1 million randomly generated hands.
 #include <string.h>
 #include <math.h>
 #include <time.h>
-
+#include <stdint.h>
 /**
  * @brief Enumeruation for card suit
  * 
