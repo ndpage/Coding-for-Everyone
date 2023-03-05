@@ -9,19 +9,38 @@
  * 
  */
 #include <stdio.h>
+#include <stdlib.h>
 
-// Struct to represent an atomic element
+// Struct to represent an atomic element_s
 typedef struct {
   char* name;
   char* symbol;
   double weight;
-} element;
+} element_s;
 
 // 
 typedef struct elem_list{
-  element data;
+  element_s data;
   struct elem_list* next;
 } elem_list;
 
-elem_list* create(element data);
-void insert(elem_list** head, elem_list data);
+/**
+ * @brief Create list of atomic elements
+ * 
+ * @return elem_list* 
+ */
+elem_list* create();
+/**
+ * @brief Insert new atomic element_s into the list
+ * 
+ * @param head 
+ * @param data 
+ * @param index 
+ */
+void insert(elem_list** head, element_s data, int index);
+/**
+ * @brief Print all items in list
+ * 
+ * @param list 
+ */
+void printList(elem_list* list);
