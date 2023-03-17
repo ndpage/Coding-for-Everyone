@@ -1,7 +1,7 @@
 {
 	"folders": [
 		{
-			"path": "C-structured-programming"
+			"path": "C-structured-programming/week3"
 		}
 	],
 	"settings": {
@@ -40,5 +40,24 @@
 			"stdio.h": "c",
 			"linked_list.h": "c"
 		}
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"name": "C++ Launch",
+				"type": "cppdbg",
+				"request": "launch",
+				"cwd": "${workspaceFolder}",
+				"program": "${cwd}/build/hw.out",
+				"externalConsole": true,
+				"logging": {
+					"moduleLoad": false,
+					"trace": true
+				},
+				//"visualizerFile": "${workspaceFolder}/my.natvis",
+				"showDisplayString": true
+			}
+		]
 	}
 }
