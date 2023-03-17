@@ -10,17 +10,18 @@
  */
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 // Struct to represent an atomic element_s
 typedef struct {
-  char* name;
-  char* symbol;
+  char name[20];
+  char symbol[2];
   double weight;
-} element_s;
+} element_ts;
 
-// 
+// struct defining list of elements
 typedef struct elem_list{
-  element_s data;
+  element_ts data;
   struct elem_list* next;
 } elem_list;
 
@@ -29,7 +30,10 @@ typedef struct elem_list{
  * 
  * @param head 
  */
-void create(elem_list* head);
+void create(elem_list** head, element_ts init_data);
+
+void delete(elem_list* head);
+
 /**
  * @brief Insert new atomic element_s into the list
  * 
@@ -37,7 +41,8 @@ void create(elem_list* head);
  * @param data 
  * @param index 
  */
-void insert(elem_list** head, element_s data, int index);
+void insert(elem_list** head, element_ts data, int index);
+
 /**
  * @brief Print all items in list
  * 
