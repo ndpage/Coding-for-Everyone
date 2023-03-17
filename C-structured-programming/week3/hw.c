@@ -4,12 +4,7 @@
  * 
  * @return int 
  */
-void delete(elem_list* head){
-  if(head == NULL){
-    return;
-  }
-  return delete(head->next);
-}
+
 int main(void){
   
   /*
@@ -79,7 +74,7 @@ void insert(elem_list** head, element_ts data, int index){
     return;
   }
 
-  // Traverse the list to find the elem_list at the specified index
+  //Traverse the list to find the elem_list at the specified index
   elem_list* current = *head;
   elem_list* previous = NULL;
   int i = 0;
@@ -94,7 +89,11 @@ void insert(elem_list** head, element_ts data, int index){
   return;
 }
 
-// Print the list
+/**
+ * @brief print list
+ * 
+ * @param head 
+ */
 void printList(elem_list* head) {
   while (head != NULL) {
     printf("%s ", head->data.name);
@@ -104,4 +103,16 @@ void printList(elem_list* head) {
   }
   printf("\n");
   return;
+}
+
+/**
+ * @brief Deletes node from list
+ * 
+ * @param head 
+ */
+void delete(elem_list* head){
+  if(head == NULL){
+    return;
+  }
+  return delete(head->next);
 }
