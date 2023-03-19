@@ -5,3 +5,5 @@
 */bin
 /bin
 */build/*
+hw.dSYM/**
+hw*
