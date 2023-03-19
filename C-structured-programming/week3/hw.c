@@ -6,19 +6,7 @@
  */
 
 int main(void){
-  
-  /*
-  element_ts hydrogen  = {"Hydrogen", "H", 1.008};
-  element_ts helium    = {"Helium","He", 4.003};
-  element_ts lithium   = {"Lithium","Li", 6.941};
-  element_ts beryllium = {"Beryllium","Be", 9.012};
-  element_ts boron     = {"Boron","B", 10.811};
-  element_ts carbon    = {"Carbon","C", 12.011};
-  element_ts nitrogen  = {"Nitrogen","N", 14.007};
-  element_ts oxygen    = {"Oxygen","O", 15.999};
-  element_ts fluorine  = {"Fluorine","F", 18.998};
-  element_ts neon      = {"Neon","Ne", 20.180};
-*/
+
   // Declare head variable to store list address
   elem_list* head;
   
@@ -37,12 +25,6 @@ int main(void){
       insert(&head, input, i);
     }
   }
-  /*
-  element_ts hydrogen  = {"Hydrogen", "H", 1.008};
-  element_ts helium    = {"Helium","He", 4.003};
-  create(&head, hydrogen);
-  insert(&head, helium, 1);
-  */
 
   // Print current list
   printList(head);
@@ -104,12 +86,15 @@ void insert(elem_list** head, element_ts data, int index){
  * @param head 
  */
 void printList(elem_list* head) {
+    printf("\n");
+    printf("============================\n");
+    printf("== Element  Symbol  Weight  \n");
+    printf("============================\n");
   while (head != NULL) {
-    printf("%s ", head->data.name);
-    printf("%s ", head->data.symbol);
-    printf("%f \n", head->data.weight);
+    printf("| %s  %s  %lf\n", head->data.name, head->data.symbol, head->data.weight);
     head = head->next; // increment list
   }
+  printf("============================\n");
   printf("\n");
   return;
 }

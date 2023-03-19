@@ -1,7 +1,7 @@
 /**
  * @file hw.h
- * @author your name (you@domain.com)
- * @brief 
+ * @author Nathan Page
+ * @brief Week 3 homework, option 2: natrual science. Store elements in a linked list
  * @version 0.1
  * @date 2023-02-05
  * 
