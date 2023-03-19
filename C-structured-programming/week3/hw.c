@@ -22,9 +22,12 @@ int main(void){
   // Declare head variable to store list address
   elem_list* head;
   
+  int list_len = 0;
+  printf("Enter number of items to insert into list: ");
+  scanf("%d", &list_len);
   // create a new list
   int i = 0;
-  for(i = 0; i < 2; i++){
+  for(i = 0; i < list_len; i++){
     element_ts input;
     printf("Enter name, symbol, weight: ");
     scanf("%s %s %lf", input.name, input.symbol, &input.weight);
@@ -34,12 +37,18 @@ int main(void){
       insert(&head, input, i);
     }
   }
+  /*
+  element_ts hydrogen  = {"Hydrogen", "H", 1.008};
+  element_ts helium    = {"Helium","He", 4.003};
+  create(&head, hydrogen);
+  insert(&head, helium, 1);
+  */
 
   // Print current list
   printList(head);
   
-  // free the list
-  free(head);
+  // free the list from memory
+  delete(head);
   return 0; //exit program
 }
 
@@ -114,5 +123,6 @@ void delete(elem_list* head){
   if(head == NULL){
     return;
   }
+  free(head);
   return delete(head->next);
 }
