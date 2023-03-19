@@ -48,7 +48,7 @@ void insert(elem_list** head, element_ts data, int index);
  * 
  * @param list 
  */
-void printList(elem_list* list);#include "hw.h"
+void printList(elem_list* list);
 /**
  * @brief Main entry point for program
  * 
