@@ -13,7 +13,8 @@
         "${fileDirname}/build/${fileBasenameNoExtension}"
       ],
       "options": {
-        "cwd": "${fileDirname}"
+        "cwd": "${fileDirname}",
+        "define": "USER_INPUT"
       },
       "problemMatcher": [
         "$gcc"
