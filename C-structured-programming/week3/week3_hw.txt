@@ -150,7 +150,7 @@ void printList(elem_list* head) {
 }
 
 /**
- * @brief Deletes node from list
+ * @brief Deletes list
  * 
  * @param head 
  */
