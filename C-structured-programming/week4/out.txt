@@ -1,0 +1,6 @@
+Week 4 homework
+Nathan Page
+
+Input: 9.000000  11.000000  12.000000  15.000000  
+Average: 11.750000
+Maximum: 15.000000
