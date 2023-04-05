@@ -1,7 +1,17 @@
-*.exe
-*.o
+
+# Ignore vs code configurations
+.vscode
+*.code-workspace
+
+# mac OS
 .DS_Store
+
+# object files
+*.o
+
+# binaries
 *.out
+*.exe
 */bin
 /bin
 */build/*
